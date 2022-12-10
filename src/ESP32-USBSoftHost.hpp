@@ -266,7 +266,7 @@ bool USB_SOFT_HOST::_init( usb_pins_config_t pconf )
   Serial.println("Enable interrupt");
   timer_enable_intr(TIMER_GROUP_0, TIMER_0);
   Serial.println("Register ISR");
-  timer_isr_register(TIMER_GROUP_0, TIMER_0, timer_group0_isr, (void *) TIMER_0, ESP_INTR_FLAG_IRAM, NULL);
+  timer_isr_register(TIMER_GROUP_0, TIMER_0, timer_group0_isr, (void *) TIMER_0, NULL, NULL);
   Serial.println("Start timer");
   timer_start(TIMER_GROUP_0, TIMER_0);
 
